@@ -1,0 +1,12 @@
+.name{
+    float: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: white;
+}
+
+.navbar{
+    background-color: maroon;
+}
