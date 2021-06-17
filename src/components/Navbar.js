@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import "../style/Navbar.css"
 
-const Example = (props) => {
+function NavBar(){
   return (
     <div>
       <Navbar className="navbar">
@@ -15,4 +15,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default NavBar;
