@@ -3,8 +3,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Code Hut</h1>
-    </div>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+        </div>
+      </nav>    </div>
   );
 }
 
