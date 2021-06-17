@@ -5,6 +5,9 @@ function LandingPage(){
     return(
         <>
         <Example/>
+        <h1>
+            LandingPage
+        </h1>
         </>
     );
 }
