@@ -3,7 +3,7 @@ import React from "react";
 class TeamMembers extends React.Component {
     render(){
         return(
-            <h1>Team Description</h1>
+            <h1>My Description</h1>
         )
     }
 }

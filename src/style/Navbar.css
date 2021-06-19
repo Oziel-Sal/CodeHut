@@ -1,13 +1,27 @@
 .name{
     float: none;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
     color: white;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: monospace;
+    transform: translateX(5px);
+    font-size: 28px !important;
+}
+.name:hover{
+    color: white;
 }
 
 .navbar{
     background-color: maroon;
+    width: 100%;
+}
+
+.navlink{
+    color: white !important;
+    font-size: 28px;
+    font-family: monospace;
+}
+.navlink2{
+    color: white !important;
+    font-size: 28px;
+    font-family: monospace;
 }
