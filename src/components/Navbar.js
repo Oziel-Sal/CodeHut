@@ -18,7 +18,7 @@ function NavBar() {
         <NavItem>
           <NavLink
             tag={Link}
-            to="/ideas/"
+            to="/something/"
             className="navlink2"
           >
             Something
