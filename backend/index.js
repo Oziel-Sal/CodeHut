@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
-const { response } = require('express');
-const fetch = require('node-fetch');
+var cors = require('cors');
 app.use(express.json());
+app.use(cors())
+
 
 /*
     I will leave this here as an example that you can use
