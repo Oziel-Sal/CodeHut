@@ -1,6 +1,5 @@
-import Description from "../components/Description";
 import TeamMembers from "../components/Team";
-
+import Description from "../components/Description";
 function LandingPage(){
     return(
         <>
@@ -11,3 +10,5 @@ function LandingPage(){
 }
 
 export default LandingPage;
+
+//        <Description/>

@@ -3,32 +3,40 @@ const app = express();
 const axios = require("axios");
 var cors = require('cors');
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+'use strict';
+const snoowrap = require('snoowrap');
 
+//OAuth Reddit API
 
-/*
-    I will leave this here as an example that you can use
-    when building your APIs. I suggest that you try to understand
-    what each line is doing. Reach out if you have any questions.
-*/
-console.log('running outside express')
+require('dotenv').config()
+const r = new snoowrap({
+  userAgent: process.env.REACT_APP_USER_AGENT,
+  clientId: process.env.REACT_APP_CLIENT_ID,
+  clientSecret: process.env.REACT_APP_CLIENT_SECRET,
+  username: process.env.REACT_APP_USERNAME,
+  password: process.env.REACT_APP_PASSWORD
+});
 
-app.get('/randomAnime', function (req, res) {
-    console.log('running inside express')
-    axios.get("https://animechan.vercel.app/api/random")
-      .then(function (response) {
-        // handle success and send back a 200 response with the data
-        console.log(response.data);
-        res.status(200).json(response.data);
-      })
-      .catch(function (error) {
-        /* 
-              It is good practice to handle the error and send back the 
-              error message that was received from the API call
-          */
-        console.log(error);
-        res.status(400).json({ error: "An error occurred" });
-      });
-  });
+//API Call to get Random Post from r/AppIdeas
+//Reddit Title:  -> .title
+//Reddit Author: -> .author
+//Redit Description: -> .selftext
+
+app.get('/randomPost', function (req, res) {
+  console.log('running inside express')
+  var subReddit = r.getSubreddit('AppIdeas');
+  subReddit.getRandomSubmission().then((posts) => {
+    // Here you have posts[0].url and posts[0].title
+    // console.log(posts.title)
+    // console.log(posts.author)
+    // console.log(posts.selftext)
+    res.status(200).json(posts);
+  })
+    .catch(function (error) {
+      console.log(error);
+      res.status(400).json({ error: "An error occurred" });
+    });
+});
 
 app.listen(process.env.PORT || 8080, () => console.log('Listening at locahost:8080'))

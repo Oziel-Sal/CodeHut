@@ -1,8 +1,8 @@
+import AppIdeas from "../components/DisplayAppIdeas";
+
 function Ideas(){
     return(
-        <h1>
-            App Ideas
-        </h1>
+        <AppIdeas/>
     );
 }
 

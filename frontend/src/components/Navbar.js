@@ -32,6 +32,7 @@ function NavBar() {
               tag={Link}
               to="/ideas/"
               className="navlink"
+              id="navlink"
             >
               App Ideas
             </NavLink>
