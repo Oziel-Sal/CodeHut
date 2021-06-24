@@ -24,7 +24,6 @@ const r = new snoowrap({
 //Redit Description: -> .selftext
 
 app.get('/randomPost', function (req, res) {
-  console.log('running inside express')
   var subReddit = r.getSubreddit('AppIdeas');
   subReddit.getRandomSubmission().then((posts) => {
     // console.log(posts.title)
