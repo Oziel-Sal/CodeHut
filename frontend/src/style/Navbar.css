@@ -1,12 +1,9 @@
-.name{
-    float: none;
-    position: relative;
+.navbrand{
     color: #27252e;
     font-family: monospace;
-    transform: translateX(5px);
     font-size: 28px !important;
 }
-.name:hover{
+.navbrand:hover{
     color: #abafbb;
 }
 
@@ -23,5 +20,16 @@
 
 .navlink:hover{
     color: #abafbb !important;
+    opacity: 45%;
+    text-decoration: none;
 
 }
+.toggler-icon{
+    font-size: 30px;
+    opacity: 75%;
+
+}
+.toggler-icon:hover {
+    opacity: 50%;
+    font-size: 36px;
+  }
