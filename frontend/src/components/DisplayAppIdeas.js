@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import '../style/DisplayAppIdeas.css'
 class AppIdeas extends React.Component {
     constructor(props) {
         super(props)
@@ -29,10 +30,9 @@ class AppIdeas extends React.Component {
         let Display3 = this.state.selftext
         return (
             <ul>
-
-                <p>Author: {Display}</p>
-                <p>Title: {Display2}</p>
-                <p>Description: {Display3}</p>
+                <p className="wh">Author: {Display}</p>
+                <p className="wh">Title: {Display2}</p>
+                <p className="wh">Description: {Display3}</p>
             </ul>
         )
     }

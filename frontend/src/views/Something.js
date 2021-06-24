@@ -1,6 +1,6 @@
 function Something(){
     return(
-        <h1>Something Here</h1>
+        <h1 color="white">Something Here</h1>
     )
 }
 

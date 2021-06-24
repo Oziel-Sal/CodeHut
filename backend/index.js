@@ -27,7 +27,6 @@ app.get('/randomPost', function (req, res) {
   console.log('running inside express')
   var subReddit = r.getSubreddit('AppIdeas');
   subReddit.getRandomSubmission().then((posts) => {
-    // Here you have posts[0].url and posts[0].title
     // console.log(posts.title)
     // console.log(posts.author)
     // console.log(posts.selftext)

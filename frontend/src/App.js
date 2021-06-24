@@ -1,4 +1,4 @@
-import './App.css';
+import './style/App.css';
 import LandingPage from './views/Landingpage';
 import Ideas from './views/IdeaPage';
 import Something from './views/Something';
@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div className="App-header">
       <Router>
         <NavBar />
         <Switch>

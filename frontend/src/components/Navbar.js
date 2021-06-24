@@ -19,7 +19,7 @@ function NavBar() {
           <NavLink
             tag={Link}
             to="/something/"
-            className="navlink2"
+            className="navlink"
           >
             Something
           </NavLink>
