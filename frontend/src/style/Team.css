@@ -8,9 +8,13 @@
     text-align: center !important;
     font-family: Arial, Helvetica, sans-serif;
 }
-.memLink{
-    margin: 40%;
-    font-size: large;
+.card_footer{
+    align-self: center;
+    background-color: transparent !important;
+    overflow: hidden;
+    color: transparent;
+    border-top: 25px !important;
+
 }
 
 .img{
@@ -24,5 +28,10 @@
     /*background-color: #27252e !important;*/
     border-top-left-radius: 50px !important;
     border-top-right-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
     overflow: hidden;
+}
+.card_link{
+    font-size: 20px;
 }

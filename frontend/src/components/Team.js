@@ -1,12 +1,12 @@
 import React from 'react';
-import { Card, CardTitle, Row, Col, CardImg, Container, CardBody, CardText, CardLink } from 'reactstrap';
+import { Card, CardTitle, Row, Col, CardImg, Container, CardBody, CardText, CardLink, CardFooter } from 'reactstrap';
 import '../style/Team.css'
 
 class TeamMembers extends React.Component {
     render() {
         return (
 
-            
+
             <Container className="d-flex vh-100">
                 {
                     <Row className="m-auto align-self-center">
@@ -17,8 +17,10 @@ class TeamMembers extends React.Component {
                                     <CardTitle className="teamtitle" tag="h4">Oziel Salinas</CardTitle>
                                     <CardText className="teamtext" tag="h5">Undergraduate Student</CardText>
                                     <CardText className="teamtext" tag="h5">University of Texas Rio Grande Valley</CardText>
-                                    <CardLink className="memLink" href="https://www.linkedin.com/in/oziel-salinas-8a5a5418b/">Linkedin</CardLink>
                                 </CardBody>
+                                <CardFooter className="card_footer">
+                                    <CardLink className="card_link" href="https://www.linkedin.com/in/oziel-salinas-8a5a5418b/">Linkedin</CardLink>
+                                </CardFooter>
                             </Card>
                         </Col>
                     </Row>
