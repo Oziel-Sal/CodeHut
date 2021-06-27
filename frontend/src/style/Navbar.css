@@ -1,27 +1,35 @@
-.name{
-    float: none;
-    position: relative;
-    color: white;
+.navbrand{
+    color: #27252e;
     font-family: monospace;
-    transform: translateX(5px);
     font-size: 28px !important;
 }
-.name:hover{
-    color: white;
+.navbrand:hover{
+    color: #abafbb;
 }
 
 .navbar{
-    background-color: maroon;
+    background-color: #f4f6f8;
     width: 100%;
 }
 
 .navlink{
-    color: white !important;
+    color: #27252e !important;
     font-size: 28px;
     font-family: monospace;
 }
-.navlink2{
-    color: white !important;
-    font-size: 28px;
-    font-family: monospace;
+
+.navlink:hover{
+    color: #abafbb !important;
+    opacity: 45%;
+    text-decoration: none;
+
 }
+.toggler-icon{
+    font-size: 30px;
+    opacity: 75%;
+
+}
+.toggler-icon:hover {
+    opacity: 50%;
+    font-size: 36px;
+  }
