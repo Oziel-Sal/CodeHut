@@ -20,7 +20,7 @@ class TeamMembers extends React.Component {
                                     <CardText className="teamtext" tag="h5">University of Texas Rio Grande Valley</CardText>
                                 </CardBody>
                                 <CardFooter className="card_footer">
-                                    <CardLink className="card_link" href="https://www.linkedin.com/in/oziel-salinas-8a5a5418b/">Linkedin</CardLink>
+                                    <CardLink className="card_link" href="https://www.linkedin.com/in/oziel-salinas-8a5a5418b/" target="_blank">Linkedin</CardLink>
                                 </CardFooter>
                             </Card>
                         </Col>
