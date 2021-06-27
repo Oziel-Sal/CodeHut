@@ -1,3 +1,28 @@
 .head_title{
     color: white;
 }
+.teamtitle{
+    text-align: center;
+}
+.teamtext{
+    text-align: center !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.memLink{
+    margin: 40%;
+    font-size: large;
+}
+
+.img{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+    overflow: hidden;
+}
+.card{
+    /*background-color: #27252e !important;*/
+    border-top-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+    overflow: hidden;
+}
