@@ -6,8 +6,9 @@ class TeamMembers extends React.Component {
     render() {
         return (
 
-
-            <Container className="d-flex vh-100">
+            <>
+            <h1 className="team_title">About Me</h1>
+            <Container className="d-flex m-vh-100">
                 {
                     <Row className="m-auto align-self-center">
                         <Col>
@@ -26,6 +27,7 @@ class TeamMembers extends React.Component {
                     </Row>
                 }
             </Container>
+            </>
         )
     }
 }
