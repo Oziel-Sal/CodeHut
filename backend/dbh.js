@@ -4,14 +4,14 @@ var cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-const { query } = require('express');
 var mysql = require('mysql');
+require('dotenv').config()
 
 var conn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "node_practice"
+    host: process.env.REACT_DB_HOST,
+    user: process.env.REACT_DB_USER,
+    password: process.env.REACT_DB_PASS,
+    database: process.env.REACT_DB_NAME
 })
 
 //Insert to DB
