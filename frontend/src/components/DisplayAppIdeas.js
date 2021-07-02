@@ -1,6 +1,7 @@
 import axios from 'axios'
 import '../style/DisplayAppIdeas.css'
 import React from 'react';
+import {Row, Col} from 'reactstrap'
 
 class AppIdeas extends React.Component {
 
@@ -8,10 +9,12 @@ class AppIdeas extends React.Component {
         super(props)
         this.state = {
             data: [],
-            isLoading: false
+            isLoading: false,
+            showMessage: false
         }
         this.submitReview = this.submitReview.bind(this);
     }
+
     //API call for random Reddit Post
     componentDidMount() {
         axios.get('http://localhost:8080/randomPost')
@@ -29,6 +32,8 @@ class AppIdeas extends React.Component {
     submitReview(e) {
         e.preventDefault();
         axios.post('http://localhost:8080/insertName')
+        this.setState({ showMessage: true });
+
     }
 
     //Button that refreshes page
@@ -37,6 +42,7 @@ class AppIdeas extends React.Component {
         window.location.reload();
     }
 
+
     //FIX FORMAT FOR APP IDEAS
     //ADD DATABASE FOR KEEPING TRACK OF SAVED, COMPLETED, AND IN PROGRESS ITEMS
     render() {
@@ -44,6 +50,7 @@ class AppIdeas extends React.Component {
         let Display = this.state.author
         let Display2 = this.state.title
         let Display3 = this.state.selftext
+        let message = this.state.showMessage
 
         return (
             <>
@@ -52,11 +59,17 @@ class AppIdeas extends React.Component {
                 <p className="wh">Description: {Display3}</p>
 
                 <div>
-                    <form onSubmit={this.submitReview}>
-                        <button>Save</button>
-                    </form>
-
-                    <button onClick={this.skip}>Skip</button>
+                    {message && <p className="gr">App Idea Saved... Click Next To Continue</p>}
+                    <Row className="m-auto align-self-center">
+                        <Col >
+                            <form onSubmit={this.submitReview}>
+                                <button>Save</button>
+                            </form>
+                        </Col>
+                        <Col>
+                            <button onClick={this.skip}>Next</button>
+                        </Col>
+                    </Row>
                 </div>
             </>
         )
