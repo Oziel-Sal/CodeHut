@@ -1,12 +1,16 @@
-import React from 'react';
 import axios from 'axios'
 import '../style/DisplayAppIdeas.css'
+import React from 'react';
+
 class AppIdeas extends React.Component {
+
     constructor(props) {
         super(props)
         this.state = {
-            posts: []
+            data: [],
+            isLoading: false
         }
+        this.submitReview = this.submitReview.bind(this);
     }
     //API call for random Reddit Post
     componentDidMount() {
@@ -19,8 +23,20 @@ class AppIdeas extends React.Component {
                 })
             })
     }
+    //Testing
+    //DB API that insertNames
+    //Testing with the author of the Reddit Post
+    submitReview(e) {
+        e.preventDefault();
+        axios.post('http://localhost:8080/insertName')
+    }
 
-    
+    //Button that refreshes page
+    skip(e) {
+        e.preventDefault();
+        window.location.reload();
+    }
+
     //FIX FORMAT FOR APP IDEAS
     //ADD DATABASE FOR KEEPING TRACK OF SAVED, COMPLETED, AND IN PROGRESS ITEMS
     render() {
@@ -28,12 +44,21 @@ class AppIdeas extends React.Component {
         let Display = this.state.author
         let Display2 = this.state.title
         let Display3 = this.state.selftext
+
         return (
-            <ul>
-                <p className="wh">Author: {Display}</p>
+            <>
+                <p className="wh" name="name">Author: {Display}</p>
                 <p className="wh">Title: {Display2}</p>
                 <p className="wh">Description: {Display3}</p>
-            </ul>
+
+                <div>
+                    <form onSubmit={this.submitReview}>
+                        <button>Save</button>
+                    </form>
+
+                    <button onClick={this.skip}>Skip</button>
+                </div>
+            </>
         )
     }
 }
