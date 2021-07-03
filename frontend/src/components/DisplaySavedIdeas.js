@@ -25,13 +25,11 @@ class SavedIdeas extends React.Component {
         console.log(Data)
         return (
             <>
-                <ul>
                     {
                         Data.map((data, index) => (
-                            <li key={index} className="white">{data}</li>
+                            <p key={index} className="white">{data}</p>
                         ))
                     }
-                </ul>
             </>
         )
     }
