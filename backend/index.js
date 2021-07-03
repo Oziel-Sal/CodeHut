@@ -79,11 +79,9 @@ app.get('/getAll' ,function(req,res){
 
       arr = [];
       for (let i = 0; i < result.length; i++) {
-        console.log(result[i].name)
-
         arr.push(result[i].name);
       }
-      
+      console.log("Status: 200");
       return res.status(200).json(arr);
   });
 
