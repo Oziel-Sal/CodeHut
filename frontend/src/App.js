@@ -1,7 +1,7 @@
 import './style/App.css';
 import LandingPage from './views/Landingpage';
 import Ideas from './views/IdeaPage';
-import Something from './views/Something';
+import Report from './views/Report';
 import NavBar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -18,8 +18,8 @@ function App() {
             <Ideas />
           </Route>
 
-          <Route exact path="/something/">
-            <Something />
+          <Route exact path="/saved/">
+            <Report />
           </Route>
 
         </Switch>

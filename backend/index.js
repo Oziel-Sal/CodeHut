@@ -69,4 +69,24 @@ app.post('/insertName',function(req,res){
   })
 })
 
+app.get('/getAll' ,function(req,res){
+  console.log("Connected!");
+  conn.query("SELECT * FROM names", function(err, result, fields) {
+      if(err){
+          console.log(err);
+          return res.status(400).json({ error: "An error occurred" });            
+      }     
+
+      arr = [];
+      for (let i = 0; i < result.length; i++) {
+        console.log(result[i].name)
+
+        arr.push(result[i].name);
+      }
+      
+      return res.status(200).json(arr);
+  });
+
+})
+
 app.listen(process.env.PORT || 8080, () => console.log('Listening at locahost:8080'))

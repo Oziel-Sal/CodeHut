@@ -32,10 +32,10 @@ function NavBar() {
             <NavItem>
               <NavLink
                 tag={Link}
-                to="/something/"
+                to="/saved/"
                 className="navlink"
               >
-                Something
+                Saved Content
               </NavLink>
             </NavItem>
             <NavItem>
