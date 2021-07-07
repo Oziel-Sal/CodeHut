@@ -31,7 +31,7 @@ class AppIdeas extends React.Component {
     //Testing with the author of the Reddit Post
     submitReview(e) {
         e.preventDefault();
-        axios.post('http://localhost:8080/insertName')
+        axios.post('http://localhost:8080/insertPost')
         this.setState({ showMessage: true });
 
     }
