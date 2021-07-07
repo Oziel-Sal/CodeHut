@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const snoowrap = require('snoowrap');
+const mysql = require('mysql');
 var cors = require('cors');
 app.use(express.json());
 app.use(cors());
 'use strict';
-const snoowrap = require('snoowrap');
-const mysql = require('mysql');
-
 
 //OAuth Reddit API
 require('dotenv').config()
@@ -53,38 +52,29 @@ app.get('/randomPost', function (req, res) {
     });
 });
 
-//PRACTICE
-//API CALL THAT SAVES NAME INTO DB
-//NEXT STEP TO CREATE A NEW DB AND ADD TABLES THAT INCLUDE SAVED PROGRESS, IN PROGRESS, DELETED POSTS.. ETC
 
-app.post('/insertName',function(req,res){
+//Inserts Author, Title, Description to Database
+app.post('/insertPost', function (req, res) {
 
-  const sql = "INSERT INTO names(name) VALUES (?)";
-  
-  conn.query(sql,[author],(err, result) =>{
+  const sql = "INSERT INTO posts(authors,titles,description) VALUES (?,?,?)";
+
+  conn.query(sql, [author, title, selfttext], (err, result) => {
     if (err) throw err;
 
     //Passes json data to postman with STATUS 200 no error
-    res.status(200).json(author);
+    res.status(200).json(result);
   })
 })
 
-app.get('/getAll' ,function(req,res){
+//Grabbing stored data from database
+app.get('/getAll', function (req, res) {
   console.log("Connected!");
-  conn.query("SELECT * FROM names", function(err, result, fields) {
-      if(err){
-          console.log(err);
-          return res.status(400).json({ error: "An error occurred" });            
-      }     
-
-      arr = [];
-      for (let i = 0; i < result.length; i++) {
-        console.log(result[i].name)
-
-        arr.push(result[i].name);
-      }
-      
-      return res.status(200).json(arr);
+  conn.query("SELECT * FROM posts", function (err, result, fields) {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: "An error occurred" });
+    }
+    return res.status(200).json(result);
   });
 
 })
