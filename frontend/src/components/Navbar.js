@@ -23,7 +23,7 @@ function NavBar() {
   return (
     <div>
       <Navbar className="navbar" expand="md">
-      <NavbarBrand href="/" className="navbrand">Code Hut</NavbarBrand>
+        <NavbarBrand href="/" className="navbrand">Code Hut</NavbarBrand>
         <NavbarToggler onClick={toggle}>
           <GiElephantHead className="toggler-icon" />
         </NavbarToggler>
