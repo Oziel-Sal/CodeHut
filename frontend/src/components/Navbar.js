@@ -23,7 +23,7 @@ function NavBar() {
   return (
     <div>
       <Navbar className="navbar" expand="md">
-      <NavbarBrand href="/" className="navbrand">Code Hut</NavbarBrand>
+        <NavbarBrand href="/" className="navbrand">Code Hut</NavbarBrand>
         <NavbarToggler onClick={toggle}>
           <GiElephantHead className="toggler-icon" />
         </NavbarToggler>
@@ -32,10 +32,10 @@ function NavBar() {
             <NavItem>
               <NavLink
                 tag={Link}
-                to="/something/"
+                to="/saved/"
                 className="navlink"
               >
-                Something
+                Saved Content
               </NavLink>
             </NavItem>
             <NavItem>
